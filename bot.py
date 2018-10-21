@@ -207,4 +207,4 @@ while True:
     except BaseException:
             time.sleep(5)
             
-client.login(process.env.BOT_TOKEN);
+client.run(BOT_TOKEN)
