@@ -1,12 +1,8 @@
-import os
 import discord
-from discord.ext.commands
 import asyncio
 import re
 import datetime
 import math
-
-client = Bot(command_prefix=BOT_PREFIX)
 
 @client.event
 async def on_ready():
