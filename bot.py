@@ -206,3 +206,5 @@ while True:
                  client.loop.run_until_complete(client.start(line))
     except BaseException:
             time.sleep(5)
+            
+client.run(os.getenv('TOKEN'))
