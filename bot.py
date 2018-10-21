@@ -4,17 +4,6 @@ import re
 import datetime
 import math
 
-client = discord.Client()
-
-@client.event
-async def on_ready():
-    print('Logged in as')
-    print(client.user.name)
-    print(client.user.id)
-    print('------')
-    await client.change_presence(game=discord.Game(name="vore-tracker"))
-    
-
 # A pattern to match the word vore, and only the single word vore.
 pattern = re.compile(r'\b[\*|_|~|`|-|\.]*[V|v][\*|_|~|`|-|\.]*[O|Ò|Ó|Ô|Õ|Ö|o|ò|ó|ô|õ|ö|ᴑ|о][\*|_|~|`|-|\.]*[R|r][\*|_|~|`|-|\.]*[E|È|É|Ê|Ë|Е|e|è|é|ê|ë|е][\*|_|~|`|-|\.]*[S|s]?\b')
 serverAndDate = {}
@@ -217,5 +206,3 @@ while True:
                  client.loop.run_until_complete(client.start(line))
     except BaseException:
             time.sleep(5)
-            
-client.run(BOT_TOKEN)
