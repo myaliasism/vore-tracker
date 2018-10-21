@@ -3,6 +3,7 @@ import asyncio
 import re
 import datetime
 import math
+import os
 
 BOT_PREFIX = os.environ['prefix'] # -Prfix is need to declare a Command in discord ex: !pizza "!" being the Prefix
 TOKEN = os.environ['BOT_TOKEN'] # The token is also substituted for security reasons
