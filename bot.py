@@ -4,6 +4,8 @@ import re
 import datetime
 import math
 
+client = Bot(command_prefix='!')
+
 @client.event
 async def on_ready():
     print('Logged in as')
