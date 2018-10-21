@@ -4,7 +4,7 @@ import re
 import datetime
 import math
 
-client = Bot(command_prefix='!')
+client = discord.Client()
 
 @client.event
 async def on_ready():
