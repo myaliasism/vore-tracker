@@ -4,19 +4,17 @@ import re
 import datetime
 import math
 
-BOT_PREFIX = os.environ['prefix'] # -Prfix is need to declare a Command in discord ex: !pizza "!" being the Prefix
-TOKEN = os.environ['BOT_TOKEN'] # The token is also substituted for security reasons
+import discord
+from discord.ext import commands
 
-client = Bot(command_prefix=BOT_PREFIX)
+bot = commands.Bot(command_prefix='$')
 
-@client.event
+@bot.event
 async def on_ready():
     print('Logged in as')
-    print(client.user.name)
-    print(client.user.id)
+    print(bot.user.name)
+    print(bot.user.id)
     print('------')
-    await client.change_presence(game=discord.Game(name="vore-tracker"))
-    
 
 # A pattern to match the word vore, and only the single word vore.
 pattern = re.compile(r'\b[\*|_|~|`|-|\.]*[V|v][\*|_|~|`|-|\.]*[O|Ò|Ó|Ô|Õ|Ö|o|ò|ó|ô|õ|ö|ᴑ|о][\*|_|~|`|-|\.]*[R|r][\*|_|~|`|-|\.]*[E|È|É|Ê|Ë|Е|e|è|é|ê|ë|е][\*|_|~|`|-|\.]*[S|s]?\b')
@@ -221,4 +219,5 @@ while True:
     except BaseException:
             time.sleep(5)
             
-client.run(BOT_TOKEN)
+client.run('BOT_TOKEN')
+bot.run('BOT_TOKEN')
